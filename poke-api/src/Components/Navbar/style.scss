@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+    .row{
+        margin-top: 2em;
+        align-items: center;
+        .container-texto{
+            width: fit-content;
+            .texto{
+                font-size: 26px;
+                white-space: nowrap
+            }
+            .pesquisa{
+                text-align: center;
+                border: 1px solid black;
+                padding: 0.2em 1.5em;
+                border-radius: 25px;
+            }
+            input{
+                text-align: center;
+                text-emphasis: none;
+                border: 0;
+                box-shadow: 0 0 0 0;
+                outline: 0;
+            }
+            button{
+                border: 0;
+                background-color: transparent;
+            }
+        }
+    }
+}
