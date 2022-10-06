@@ -8,16 +8,17 @@
             width: fit-content;
             padding: 4em 0em;
             .texto{
-                font-size: 26px;
+                font-size: 52px;
                 white-space: nowrap
             }
             .pesquisa{
                 text-align: center;
                 border: 1px solid black;
-                padding: 0.2em 1.5em;
-                border-radius: 25px;
+                padding: 1.2em 1.2em;
+                border-radius: 40px;
             }
             input{
+                font-size: 19px;
                 text-align: center;
                 text-emphasis: none;
                 border: 0;

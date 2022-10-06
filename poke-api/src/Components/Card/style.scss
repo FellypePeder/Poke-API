@@ -1,30 +1,25 @@
-.card-prod{
-    line-height: 21px;
-    height: 380px;
-    box-shadow: 8px 8px 40px #d8d8d8;
-    border-radius: 10px;
-    margin: 3em 2em;
-
-    &:hover{
-        box-shadow: 8px 8px 40px #a5a5a5;
-        transform: translateY(-5px);
-    }
-    img{
-        max-height: 120px;
-        margin-top: 10px;
-    }
-    .titulo-prod{
-        margin-top: 1.5em;
-        margin-left: 10px;
-        color: #ff8800;
-        font-size: 24px;
-    }
-    .desc-prod{
-        margin: 15px;
-        padding-bottom: 20px;
-    }
-    .info-adicional{
-        margin: 15px;
-        padding-bottom: 20px;
+.row{
+    --bs-gutter-x: 0em;
+    .card-prod{
+        line-height: 21px;
+        height: 420px;
+        box-shadow: 8px 8px 40px #d8d8d8;
+        border-radius: 10px;
+        margin: 3em 3.5em;
+    
+        &:hover{
+            box-shadow: 8px 8px 40px #a5a5a5;
+            transform: translateY(-5px);
+        }
+        img{
+            max-height: 80%;
+            margin-top: 10px;
+        }
+        p{
+            margin-left: 1em;
+        }
+        .tipo{
+            font-size: 18px;
+        }
     }
 }
