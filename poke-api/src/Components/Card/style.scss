@@ -1,23 +1,26 @@
 .row {
-  --bs-gutter-x: 0em;
+    --bs-gutter-x: 0em;
     .card-poke {
-        line-height: 21px;
+        // display: flex;
+        // justify-content: center;
+
         height: 420px;
-        width: 300px;
+        width: auto;
+        
         box-shadow: 8px 8px 40px #e7e7e7;
-        border-radius: 10px;
-        // margin-left: 12px;
-        // margin-right: 12px;
-        // margin-bottom: 24px;
+
 
         &:hover {
             box-shadow: 8px 8px 20px #a5a5a5;
             transform: translateY(-5px);
             cursor: pointer;
         }
-        img {
-            max-height: 80%;
-            margin-top: 10px;
+        .img-poke {
+            width: 100%;
+            height: auto;
+        }
+        .imagem{
+            width: 100px;
         }
         p {
             margin-left: 1em;
