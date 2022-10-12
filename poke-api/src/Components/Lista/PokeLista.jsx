@@ -15,11 +15,9 @@ function PokeLista() {
   });
 
   return (
-    <div className="row area">
-      {pokemons.map((e, key) => (
-        <div key={key}>
-          <PokeCard url={e.url} />
-        </div>
+    <div className="area">
+      {pokemons.map((e) => (
+        <PokeCard url={e.url} />
       ))}
     </div>
   );

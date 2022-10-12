@@ -12,20 +12,18 @@ function PokeCard({url}) {
     api.get(url)
     .then((res) => {
       setPokeInfo(res.data);
-      console.log(res.data.id);
+      // console.log(res.data.id);
     });
   },[url]);
 
   return (
-    <div className="row">
-      <div className="col-12 col-md-4 card-poke">
-        <div className="conteudo-card text-center">
-          <div className="imagem">
-            <img src={imgPoke + pokeInfo.id +".png"} alt="" className="img-poke"/>
-          </div>
-          <p className="nome-poke">{pokeInfo.name}</p>
-          <p className="peso-poke">{pokeInfo.height}</p>
+    <div className="card-poke">
+      <div className="conteudo-card text-center">
+        <div className="imagem">
+          <img src={imgPoke + pokeInfo.id +".png"} alt="" className="img-poke"/>
         </div>
+        <p className="nome-poke">{pokeInfo.name}</p>
+        <p className="peso-poke">{pokeInfo.height}</p>
       </div>
     </div>
   );
