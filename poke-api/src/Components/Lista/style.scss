@@ -1,0 +1,12 @@
+.botoes{
+    display: flex;
+    justify-content: center;
+    button{
+        background-color: aquamarine;
+        margin: 0em 1em;
+        margin-bottom: 4em;
+        padding: 1em 6em;
+        border: none;
+        border-radius: 15px;
+    }
+}

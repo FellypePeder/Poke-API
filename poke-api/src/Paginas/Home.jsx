@@ -4,10 +4,12 @@ import PokeCard from "../Components/Card/PokeCard";
 
 function Home() {
     return (
-        <div>
-            <Navbar></Navbar>
-            <PokeCard></PokeCard>
-        </div>
+        <>
+            <div className="container-fluid">
+                <Navbar></Navbar>
+                <PokeCard></PokeCard>
+            </div>
+        </>
     );
 }
   

@@ -3,6 +3,7 @@ import api from "../../api";
 import "bootstrap/dist/css/bootstrap.css";
 import "./style.scss";
 import PokeCard from "../Card/PokeCard";
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 function PokeLista() {
   const [pokemons, setPokemons] = useState([]);
@@ -15,10 +16,18 @@ function PokeLista() {
   });
 
   return (
-    <div className="area">
-      {pokemons.map((e) => (
-        <PokeCard url={e.url} />
-      ))}
+    <div className="container">  
+      <div className="row gx-3 justify-content-center">
+        <div className="text-center botoes">
+          <button><FaAngleLeft /></button>
+          <button><FaAngleRight /></button>
+        </div>
+        {
+          pokemons.map((e) => (
+            <PokeCard url={e.url} />
+          ))
+        }
+      </div>
     </div>
   );
 }

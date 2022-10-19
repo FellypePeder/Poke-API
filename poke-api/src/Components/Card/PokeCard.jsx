@@ -8,24 +8,27 @@ function PokeCard({url}) {
 
   let imgPoke = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
 
+  const letraMaiscula = str => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   useEffect(() => {
     api.get(url)
     .then((res) => {
       setPokeInfo(res.data);
-      // console.log(res.data.id);
     });
   },[url]);
 
   return (
-    <div className="card-poke">
-      <div className="conteudo-card text-center">
+    <>
+      <div className="conteudo-card col-lg-3 col-md-6 text-center">
         <div className="imagem">
+          <p className="nome-poke">{letraMaiscula(pokeInfo.name)}</p>
           <img src={imgPoke + pokeInfo.id +".png"} alt="" className="img-poke"/>
         </div>
-        <p className="nome-poke">{pokeInfo.name}</p>
-        <p className="peso-poke">{pokeInfo.height}</p>
+        <p className="peso-poke">Altura: {pokeInfo.height}</p>
       </div>
-    </div>
+    </>
   );
 }
 
