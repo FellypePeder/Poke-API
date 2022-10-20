@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api";
-
-import Modal from "../Modal/DetalheModal";
-
+import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.css";
 import "./style.scss";
 
@@ -23,21 +21,56 @@ function PokeCard({ url }) {
     });
   }, [url]);
 
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        setModalVis(false);
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
   return (
     <>
-      <div className="conteudo-card col-lg-3 col-md-6 text-center">
-        <div className="imagem">
-          <p className="nome-poke">{letraMaiscula(pokeInfo.name)}</p>
-          <img src={imgPoke + pokeInfo.id +".png"} onClick={() => setModalVis(true)} alt="" className="img-poke"/>
-        </div>
-        <p className="peso-poke">Altura: {pokeInfo.height}</p>
-        <button onClick={() => setModalVis(true)}>Ver mais detalhes</button>
-      </div>
-        {modalVis ? (
-          <Modal onClose={() => setModalVis(false)}>
-            <h2>Detalhes pokemon</h2>
-          </Modal>
-        ) : null}
+      {pokeInfo !== undefined ? (
+        <>
+          <div className="conteudo-card col-lg-3 col-md-6 text-center">
+            <div className="imagem" onClick={() => { setModalVis(true); }}>
+              <p className="nome-poke">{letraMaiscula(pokeInfo.name)}</p>
+              <img
+                src={imgPoke + pokeInfo.id + ".png"}
+                alt=""
+                className="img-poke"
+              />
+            </div>
+            <p className="peso-poke">Altura: {pokeInfo.height}</p>
+            <Modal
+              show={modalVis}
+              size="lg"
+              aria-labelledby="contained-modal-title-vcenter"
+              centered
+            >
+              <Modal.Header closeButton onClick={() => setModalVis(false)}>
+                <Modal.Title id="contained-modal-title-vcenter">
+                  Modal heading
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <h4>Centered Modal</h4>
+                <p>
+                  Cras mattis consectetur purus sit amet fermentum. Cras justo
+                  odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
+                  risus, porta ac consectetur ac, vestibulum at eros.
+                </p>
+              </Modal.Body>
+              <Modal.Footer></Modal.Footer>
+            </Modal>
+          </div>
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 }
