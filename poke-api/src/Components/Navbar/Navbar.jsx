@@ -6,8 +6,8 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
   return (
-    <div class="container align-items-center">
-      <div class="row" id="row-pokecard">
+    <div class="container">
+      <div class="row justify-content-center" id="row-pokecard">
         <div class="col-md-12 container-texto">
           <p className="texto">Selecione seu pokemón!</p>
           <section className="pesquisa">

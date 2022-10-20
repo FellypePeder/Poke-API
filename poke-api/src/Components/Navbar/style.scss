@@ -1,6 +1,4 @@
 .container{
-    display: flex;
-    justify-content: center;
     .row{
         .container-texto{
             width: fit-content;
@@ -11,12 +9,13 @@
             }
             .pesquisa{
                 text-align: center;
-                border: 1px solid black;
+                border: 2px solid black;
                 padding: 1.2em 1.2em;
                 border-radius: 40px;
             }
             input{
                 font-size: 19px;
+                color: black;
                 text-align: center;
                 text-emphasis: none;
                 border: 0;

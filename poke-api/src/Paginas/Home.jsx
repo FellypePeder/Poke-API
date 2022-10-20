@@ -6,8 +6,8 @@ function Home() {
     return (
         <>
             <div className="container-fluid">
-                <Navbar></Navbar>
-                <PokeCard></PokeCard>
+                <Navbar/>
+                <PokeCard/>
             </div>
         </>
     );
