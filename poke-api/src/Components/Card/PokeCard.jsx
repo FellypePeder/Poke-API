@@ -7,6 +7,7 @@ import "./style.scss";
 function PokeCard({ url }) {
   const [pokeInfo, setPokeInfo] = useState();
   const [modalVis, setModalVis] = useState(false);
+  
 
   let imgPoke =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
@@ -36,7 +37,12 @@ function PokeCard({ url }) {
       {pokeInfo !== undefined ? (
         <>
           <div className="conteudo-card col-lg-3 col-md-6 text-center">
-            <div className="imagem" onClick={() => { setModalVis(true); }}>
+            <div
+              className="imagem"
+              onClick={() => {
+                setModalVis(true);
+              }}
+            >
               <p className="nome-poke">{letraMaiscula(pokeInfo.name)}</p>
               <img
                 src={imgPoke + pokeInfo.id + ".png"}
@@ -44,7 +50,6 @@ function PokeCard({ url }) {
                 className="img-poke"
               />
             </div>
-            <p className="peso-poke">Altura: {pokeInfo.height}</p>
             <Modal
               show={modalVis}
               size="lg"
@@ -53,18 +58,18 @@ function PokeCard({ url }) {
             >
               <Modal.Header closeButton onClick={() => setModalVis(false)}>
                 <Modal.Title id="contained-modal-title-vcenter">
-                  Modal heading
+                  {
+                    letraMaiscula(pokeInfo.name) +
+                    ", tipo: " +
+                    letraMaiscula(pokeInfo.types[0].type.name) + " " + 
+                    letraMaiscula(pokeInfo.types.length == 2 ? pokeInfo.types[1].type.name : " ")
+                  }
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <h4>Centered Modal</h4>
-                <p>
-                  Cras mattis consectetur purus sit amet fermentum. Cras justo
-                  odio, dapibus ac facilisis in, egestas eget quam. Morbi leo
-                  risus, porta ac consectetur ac, vestibulum at eros.
-                </p>
+                <p>Altura: {pokeInfo.height / 10 + "m"}</p>
+                <p className="peso-poke">Peso: {pokeInfo.weight / 10 + "kg"}</p>
               </Modal.Body>
-              <Modal.Footer></Modal.Footer>
             </Modal>
           </div>
         </>
