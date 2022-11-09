@@ -66,7 +66,7 @@ function PokeCard({ url }) {
                     " " +
                     letraMaiscula(
                       pokeInfo.types.length == 2
-                        ? pokeInfo.types[1].type.name
+                        ? " e " + pokeInfo.types[1].type.name
                         : " "
                     )}
                 </Modal.Title>
@@ -75,9 +75,22 @@ function PokeCard({ url }) {
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
+                <p className="poke-experiencia"></p>
                 <p>Altura: {pokeInfo.height / 10 + "m"}</p>
                 <p className="peso-poke">Peso: {pokeInfo.weight / 10 + "kg"}</p>
-                <p className="ataque-poke">{letraMaiscula(pokeInfo.stats[1].stat.name)+": "+pokeInfo.stats[0].base_stat}</p>
+                <p className="ataque-poke">
+                  {letraMaiscula(pokeInfo.stats[1].stat.name) +
+                    ": " +
+                    pokeInfo.stats[0].base_stat}
+                </p>
+                <p className="habilidade-poke">
+                  {letraMaiscula(pokeInfo.abilities[0].ability.name) +
+                  letraMaiscula(
+                    pokeInfo.abilities.length == 2
+                      ? " e " + pokeInfo.abilities[1].ability.name
+                      : " "
+                  )}
+                </p>
               </Modal.Body>
             </Modal>
           </div>
