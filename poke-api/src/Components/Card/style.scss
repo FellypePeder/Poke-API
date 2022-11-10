@@ -1,8 +1,8 @@
 .conteudo-card{
-    margin-bottom: 1em;
-    box-shadow: 8px 8px 40px #e7e7e7;
-    border-radius: 20px;    
+    margin-bottom: 1em;    
     margin: 0.5em 0.5em;
+    box-shadow: 8px 8px 40px #e7e7e7;
+    border-radius: 20px;
 
     &:hover {
         box-shadow: 8px 8px 20px #a5a5a5;
@@ -18,24 +18,40 @@
             border: none;
         }
     }
-    
     .nome-poke{
         font-size: 28px;
     }
-    .peso-poke{
-        font-size: 20px;
+}
+
+.modal{
+    
+    .modal-body{  
+        background-image: url("../imagens/imagem-fundo.jpg") ;
+        opacity: 0.95;
     }
 }
 
 .poke-info{
     display: flex;
     justify-content: space-around;
-    img{
-        width: 30%;
-        height: auto;
+    
+    .poke-image{
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        img{
+            display: block;
+            align-items: center;
+            border-image: 20px solid black;
+            max-width: 150px;
+            max-height: 150px;
+        }
     }
     .info-direita{
-        
+        padding: 1em;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 46px 17px 48px 0px rgba(181,181,181,0.5);
         
     }
 }
