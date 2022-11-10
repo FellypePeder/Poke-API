@@ -96,13 +96,13 @@ function PokeCard({ url }) {
                     <div className="info-luta">
                       <h2>Luta</h2>
                       <p className="hp-poke">
-                        {"HP: " + pokeInfo.stats[0].base_stat + " pontos de vida"}
+                        {"HP: " + pokeInfo.stats[0].base_stat + "PV"}
                       </p>
                       <p className="ataque-poke">
-                        {"Ataque: " + pokeInfo.stats[1].base_stat + " pontos de ataque"}
+                        {"Ataque: " + pokeInfo.stats[1].base_stat + "PA"}
                       </p>
                       <p className="defesa-poke">
-                        {"Defesa: " + pokeInfo.stats[2].base_stat + " pontos de defesa"}
+                        {"Defesa: " + pokeInfo.stats[2].base_stat + "PD"}
                       </p>
                       <p className="ataque-especial-poke">
                         {"Ataque especial: " + pokeInfo.stats[3].base_stat + " pontos de ataque especial"}
