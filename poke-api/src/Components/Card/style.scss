@@ -28,13 +28,14 @@
     .modal-body{  
         background-image: url("../imagens/imagem-fundo.jpg") ;
         opacity: 0.95;
+        background-repeat: no-repeat;
     }
 }
 
 .poke-info{
     display: flex;
     justify-content: space-around;
-    
+
     .poke-image{
         display: flex;
         align-items: center;
@@ -43,8 +44,8 @@
             display: block;
             align-items: center;
             border-image: 20px solid black;
-            max-width: 150px;
-            max-height: 150px;
+            max-width: 200px;
+            max-height: 200px;
         }
     }
     .info-direita{
@@ -52,7 +53,13 @@
         border-radius: 20px;
         background-color: white;
         box-shadow: 46px 17px 48px 0px rgba(181,181,181,0.5);
-        
+        opacity: .91;
+        .info-luta{
+            .poke-progress-bar{
+                margin: 5px 0px;
+                
+            }
+        }
     }
 }
 

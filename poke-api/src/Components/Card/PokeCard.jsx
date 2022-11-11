@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import api from "../../api";
 import Modal from "react-bootstrap/Modal";
 
+import { CircularProgress } from "@mui/material";
+import ProgressBar from "react-bootstrap/ProgressBar";
 import { AiOutlineClose } from "react-icons/ai";
 import "bootstrap/dist/css/bootstrap.css";
 import "./style.scss";
@@ -95,24 +97,13 @@ function PokeCard({ url }) {
                     </div>
                     <div className="info-luta">
                       <h2>Luta</h2>
-                      <p className="hp-poke">
-                        {"HP: " + pokeInfo.stats[0].base_stat + "PV"}
-                      </p>
-                      <p className="ataque-poke">
-                        {"Ataque: " + pokeInfo.stats[1].base_stat + "PA"}
-                      </p>
-                      <p className="defesa-poke">
-                        {"Defesa: " + pokeInfo.stats[2].base_stat + "PD"}
-                      </p>
-                      <p className="ataque-especial-poke">
-                        {"Ataque especial: " + pokeInfo.stats[3].base_stat + " pontos de ataque especial"}
-                      </p>
-                      <p className="defesa-especial-poke">
-                        {"Defesa especial: " + pokeInfo.stats[4].base_stat + " pontos de defesa especial"}
-                      </p>
-                      <p className="velocidade-poke">
-                        {"Velocidade: " + pokeInfo.stats[5].base_stat + " pontos de velocidade"}
-                      </p>
+                      
+                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[0].base_stat} label={pokeInfo.stats[0].base_stat} />
+                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[1].base_stat} label={pokeInfo.stats[1].base_stat} />
+                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[2].base_stat} label={pokeInfo.stats[2].base_stat} />
+                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[3].base_stat} label={pokeInfo.stats[3].base_stat} />
+                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[4].base_stat} label={pokeInfo.stats[4].base_stat} />
+                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[5].base_stat} label={pokeInfo.stats[5].base_stat} />
                       <h2>Habilidade</h2>
                       <p className="habilidade-poke">
                         {"Habilidades: " +
@@ -123,6 +114,7 @@ function PokeCard({ url }) {
                               : " "
                           )}
                       </p>
+                      
                     </div>
                   </div>
                 </div>
