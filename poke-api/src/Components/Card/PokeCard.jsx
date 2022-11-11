@@ -100,11 +100,13 @@ function PokeCard({ url }) {
                         Peso: {pokeInfo.weight / 10 + "kg"}
                       </p>
                     </div>
+
                     <div className="info-luta">
                       <h2><u>Luta</u></h2>
                       
-                      <OverlayTrigger
-                        placement="auto"
+                      <div className="progress-bar">
+                        <OverlayTrigger
+                        placement="top"
                         delay={{ show: 5, hide: 5 }}
                         overlay={
                           <Popover id="popover-basic">
@@ -114,9 +116,9 @@ function PokeCard({ url }) {
                       >
                         <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[0].base_stat} label={pokeInfo.stats[0].base_stat} />
                       </OverlayTrigger>
-                      
+
                       <OverlayTrigger
-                        placement="auto"
+                        placement="top"
                         delay={{ show: 5, hide: 5 }}
                         overlay={
                           <Popover id="popover-basic">
@@ -128,7 +130,7 @@ function PokeCard({ url }) {
                       </OverlayTrigger>
 
                       <OverlayTrigger
-                        placement="auto"
+                        placement="top"
                         delay={{ show: 5, hide: 5 }}
                         overlay={
                           <Popover id="popover-basic">
@@ -140,7 +142,7 @@ function PokeCard({ url }) {
                       </OverlayTrigger>
 
                       <OverlayTrigger
-                        placement="auto"
+                        placement="top"
                         delay={{ show: 5, hide: 5 }}
                         overlay={
                           <Popover id="popover-basic">
@@ -152,7 +154,7 @@ function PokeCard({ url }) {
                       </OverlayTrigger>
 
                       <OverlayTrigger
-                        placement="auto"
+                        placement="top"
                         delay={{ show: 5, hide: 5 }}
                         overlay={
                           <Popover id="popover-basic">
@@ -164,7 +166,7 @@ function PokeCard({ url }) {
                       </OverlayTrigger>
 
                       <OverlayTrigger
-                        placement="auto"
+                        placement="top"
                         delay={{ show: 5, hide: 5 }}
                         overlay={
                           <Popover id="popover-basic">
@@ -174,8 +176,10 @@ function PokeCard({ url }) {
                       >
                         <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[5].base_stat} label={pokeInfo.stats[5].base_stat} />
                       </OverlayTrigger>
+                      </div>
                       
                       <h2><u>Habilidade</u></h2>
+
                       <p className="habilidade-poke">
                         {"Habilidades: " +
                           letraMaiscula(pokeInfo.abilities[0].ability.name) +
@@ -187,6 +191,7 @@ function PokeCard({ url }) {
                       </p>
                       
                     </div>
+
                   </div>
                 </div>
               </Modal.Body>

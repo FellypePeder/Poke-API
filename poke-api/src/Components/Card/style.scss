@@ -24,21 +24,31 @@
 }
 
 .modal{
-    
-    .modal-body{  
+    width: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .modal-body{
         background-image: url("../imagens/imagem-fundo.jpg") ;
+        background-size: 116vh;
+        
         opacity: 0.95;
         background-repeat: no-repeat;
+        height: auto;
     }
 }
 
 .poke-info{
+    margin: 0em 2em;
+    margin-bottom: 1em;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    width: 350px;
 
     .poke-image{
         display: flex;
         align-items: center;
+        justify-content: center;
         margin-right: 15px;
         img{
             display: block;
@@ -59,6 +69,20 @@
                 margin: 5px 0px;
                 height: 20px;
                 font-size: 16px;
+            }
+        }
+        .lista-poke{
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            .item-poke{
+                list-style-type: none;
+                border-left: 1px solid black;
+                p{
+                    margin: 0;
+                    padding: 0;
+                    margin-left: 10px;
+                }
             }
         }
     }
