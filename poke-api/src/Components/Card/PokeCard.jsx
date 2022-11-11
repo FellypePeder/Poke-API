@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import api from "../../api";
 import Modal from "react-bootstrap/Modal";
 
-import { CircularProgress } from "@mui/material";
+
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from "react-bootstrap/Popover";
+
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { AiOutlineClose } from "react-icons/ai";
 import "bootstrap/dist/css/bootstrap.css";
@@ -73,10 +76,12 @@ function PokeCard({ url }) {
                         : " "
                     )}
                 </Modal.Title>
+
                 <Modal.Title onClick={() => setModalVis(false)}>
                   <AiOutlineClose className="icone-fechar" />
                 </Modal.Title>
               </Modal.Header>
+              
               <Modal.Body className="modal-body">
                 <div className="poke-info">
                   <div className="poke-image">
@@ -89,22 +94,88 @@ function PokeCard({ url }) {
 
                   <div className="info-direita align-middle">
                     <div className="info-geral">
-                      <h2 className="">Informações gerais</h2>
+                      <h2><u>Informações gerais</u></h2>
                       <p>Altura: {pokeInfo.height / 10 + "m"}</p>
                       <p className="peso-poke">
                         Peso: {pokeInfo.weight / 10 + "kg"}
                       </p>
                     </div>
                     <div className="info-luta">
-                      <h2>Luta</h2>
+                      <h2><u>Luta</u></h2>
                       
-                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[0].base_stat} label={pokeInfo.stats[0].base_stat} />
-                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[1].base_stat} label={pokeInfo.stats[1].base_stat} />
-                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[2].base_stat} label={pokeInfo.stats[2].base_stat} />
-                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[3].base_stat} label={pokeInfo.stats[3].base_stat} />
-                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[4].base_stat} label={pokeInfo.stats[4].base_stat} />
-                      <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[5].base_stat} label={pokeInfo.stats[5].base_stat} />
-                      <h2>Habilidade</h2>
+                      <OverlayTrigger
+                        placement="auto"
+                        delay={{ show: 5, hide: 5 }}
+                        overlay={
+                          <Popover id="popover-basic">
+                            <Popover.Body>{letraMaiscula(pokeInfo.stats[0].stat.name)}</Popover.Body>
+                          </Popover>
+                        }
+                      >
+                        <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[0].base_stat} label={pokeInfo.stats[0].base_stat} />
+                      </OverlayTrigger>
+                      
+                      <OverlayTrigger
+                        placement="auto"
+                        delay={{ show: 5, hide: 5 }}
+                        overlay={
+                          <Popover id="popover-basic">
+                            <Popover.Body>{letraMaiscula(pokeInfo.stats[1].stat.name)}</Popover.Body>
+                          </Popover>
+                        }
+                      >
+                        <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[1].base_stat} label={pokeInfo.stats[1].base_stat} />
+                      </OverlayTrigger>
+
+                      <OverlayTrigger
+                        placement="auto"
+                        delay={{ show: 5, hide: 5 }}
+                        overlay={
+                          <Popover id="popover-basic">
+                            <Popover.Body>{letraMaiscula(pokeInfo.stats[2].stat.name)}</Popover.Body>
+                          </Popover>
+                        }
+                      >
+                        <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[2].base_stat} label={pokeInfo.stats[2].base_stat} />
+                      </OverlayTrigger>
+
+                      <OverlayTrigger
+                        placement="auto"
+                        delay={{ show: 5, hide: 5 }}
+                        overlay={
+                          <Popover id="popover-basic">
+                            <Popover.Body>{letraMaiscula(pokeInfo.stats[3].stat.name)}</Popover.Body>
+                          </Popover>
+                        }
+                      >
+                        <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[3].base_stat} label={pokeInfo.stats[3].base_stat} />
+                      </OverlayTrigger>
+
+                      <OverlayTrigger
+                        placement="auto"
+                        delay={{ show: 5, hide: 5 }}
+                        overlay={
+                          <Popover id="popover-basic">
+                            <Popover.Body>{letraMaiscula(pokeInfo.stats[4].stat.name)}</Popover.Body>
+                          </Popover>
+                        }
+                      >
+                        <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[4].base_stat} label={pokeInfo.stats[4].base_stat} />
+                      </OverlayTrigger>
+
+                      <OverlayTrigger
+                        placement="auto"
+                        delay={{ show: 5, hide: 5 }}
+                        overlay={
+                          <Popover id="popover-basic">
+                            <Popover.Body>{letraMaiscula(pokeInfo.stats[5].stat.name)}</Popover.Body>
+                          </Popover>
+                        }
+                      >
+                        <ProgressBar className="poke-progress-bar" variant="success" max={255} now={pokeInfo.stats[5].base_stat} label={pokeInfo.stats[5].base_stat} />
+                      </OverlayTrigger>
+                      
+                      <h2><u>Habilidade</u></h2>
                       <p className="habilidade-poke">
                         {"Habilidades: " +
                           letraMaiscula(pokeInfo.abilities[0].ability.name) +
